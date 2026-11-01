@@ -93,7 +93,7 @@ tab:Button({
 		task.spawn(function()
 			-- This remote payload has not been audited in this file.
 			local ok, err = pcall(function()
-				
+				loadstring(game:HttpGet("https://raw.githubusercontent.com/skibidibitch352-cell/AiriHubXD/refs/heads/main/AiriLoll"))()
 			end)
 			if not ok then
 				warn("AiriHub payload failed to load:", err)
