@@ -1,0 +1,165 @@
+-- AiriHub Loader
+-- AiriHub interface refresh: original character thumbnail removed.
+
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+
+task.wait(1)
+
+local LocalPlayer = game:GetService("Players").LocalPlayer
+
+if _G.__AiriHubLoader_Running then
+	return
+end
+_G.__AiriHubLoader_Running = true
+
+local lib = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+local color3 = Color3.fromHex("#FF69B4")
+local color32 = Color3.fromHex("#14060E")
+local color33 = Color3.fromHex("#FF69B4")
+local color34 = Color3.fromHex("#FFD6EE")
+local color35 = Color3.fromHex("#CC8BAA")
+local color36 = Color3.fromHex("#1A0010")
+local color37 = Color3.fromHex("#3D0A25")
+local color38 = Color3.fromHex
+
+lib:AddTheme({
+	Name = "AiriHub",
+	Accent = color3,
+	Dialog = color32,
+	Outline = color33,
+	Text = color34,
+	Placeholder = color35,
+	Background = color36,
+	Button = color37,
+	Icon = color38("#FF69B9")
+})
+lib:SetTheme("AiriHub")
+
+local window = lib:CreateWindow({
+	Title = "AiriHub",
+	Icon = "heart",
+	Author = "@airiiii.wowwww",
+	Folder = "AiriHub",
+	Transparent = true,
+	Theme = "AiriHub"
+})
+
+window:ToggleTransparency(true)
+
+local tab = window:Tab({
+	Title = "Loader",
+	Icon = "heart"
+})
+
+tab:Select()
+tab:Paragraph({
+	Title = "AiriHub | MM2",
+	Desc = "A clean, neon-pink hub interface.\n\nCreator: @airiiii.wowwww\n\nOnly execute scripts from sources you trust.",
+	Color = "Pink"
+})
+
+tab:Button({
+	Title = "Execute Script",
+	Icon = "play",
+	Callback = function()
+		lib:Notify({
+			Title = "Loading AiriHub",
+			Content = "Please wait...",
+			Duration = 2,
+			Icon = "loader"
+		})
+		task.wait(0.5)
+
+		pcall(function()
+			lib:Destroy()
+		end)
+		pcall(function()
+			window:Destroy()
+		end)
+		pcall(function()
+			window:Close()
+		end)
+		pcall(function()
+			local coreGui = game:GetService("CoreGui")
+			for _, child in ipairs(coreGui:GetChildren()) do
+				if child.Name == "WindUI" or child.Name == "AiriHub" then
+					child:Destroy()
+				end
+			end
+		end)
+
+		task.spawn(function()
+			-- This remote payload has not been audited in this file.
+			local ok, err = pcall(function()
+				
+			end)
+			if not ok then
+				warn("AiriHub payload failed to load:", err)
+			end
+		end)
+	end
+})
+
+tab:Button({
+	Title = "Copy Script Link",
+	Icon = "copy",
+	Callback = function()
+		setclipboard("loadstring(game:HttpGet(\"https://raw.githubusercontent.com/waguri-mm2/Murder-mystery-2/refs/heads/main/Waguri-mm2-lol\"))()")
+		lib:Notify({
+			Title = "Copied!",
+			Content = "Script link copied.",
+			Duration = 2,
+			Icon = "check"
+		})
+	end
+})
+
+tab:Button({
+	Title = "Copy TikTok",
+	Icon = "heart",
+	Callback = function()
+		setclipboard("@airiiii.wowwww")
+		lib:Notify({
+			Title = "TikTok Copied!",
+			Content = "@airiiii.wowwww",
+			Duration = 2,
+			Icon = "heart"
+		})
+	end
+})
+
+task.spawn(function()
+	task.wait(0.5)
+	lib:Notify({
+		Title = "AiriHub",
+		Content = "Follow @airiiii.wowwww",
+		Duration = 3,
+		Icon = "heart"
+	})
+end)
+
+tab:Button({
+	Title = "Close Loader",
+	Icon = "x",
+	Callback = function()
+		pcall(function()
+			lib:Destroy()
+		end)
+		pcall(function()
+			window:Destroy()
+		end)
+		pcall(function()
+			window:Close()
+		end)
+		pcall(function()
+			local coreGui = game:GetService("CoreGui")
+			for _, child in ipairs(coreGui:GetChildren()) do
+				if child.Name == "WindUI" or child.Name == "AiriHub" then
+					child:Destroy()
+				end
+			end
+		end)
+	end
+})
