@@ -106,7 +106,7 @@ tab:Button({
 	Title = "Copy Script Link",
 	Icon = "copy",
 	Callback = function()
-		setclipboard("loadstring(game:HttpGet(\"https://raw.githubusercontent.com/waguri-mm2/Murder-mystery-2/refs/heads/main/Waguri-mm2-lol\"))()")
+		setclipboard("loadstring(game:HttpGet("https://raw.githubusercontent.com/skibidibitch352-cell/AiriHubXD/refs/heads/main/AiriHub%20v2"))()")
 		lib:Notify({
 			Title = "Copied!",
 			Content = "Script link copied.",
